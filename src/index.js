@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
@@ -13,9 +13,9 @@ const App = () => {
     setCount((c) => c + 1);
   };
 
-  const addTodo = () => {
+  const addTodo = useCallback(() => {
     setTodos((t) => [...t, "New Todo"]);
-  };
+  }, [todos]);
 
   return (
     <>
